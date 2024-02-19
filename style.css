@@ -1,0 +1,31 @@
+#yemedhnatLogo{
+    width:5%;
+    height : auto;
+}
+.cardContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#map {
+    height: 400px; /* The height is 400 pixels */
+    width: 50%; /* The width is the width of the web page */
+    border: 1px solid black;
+}
+@media screen and (max-width:480px) {
+    #map {
+        height: 400px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+    }
+    .blink{
+        background-color:white ;
+    }
+}
+.hover-effect:hover {
+  opacity: 0.5;
+  border-bottom: 1px solid blue;
+}
+#titleyemedhnat{
+    color: aliceblued;
+    position: relative;
+    left:-50px;
+}

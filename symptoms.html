@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms</title>
+</head>
+<body>
+    <form action="#">
+        <label for="age">እድመ</label>
+        <input type="text" name="age"/>
+        <label for="weight">ክብደት</label>
+        <input type="number" name = "weight"/>
+        <label for="height"> ቁመት</label>
+        <input type="number" name = 'height'>
+        <button id="analyze" >መርምር</button>
+    </form>
+
+    <script>
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://api.endlessmedical.com/v1/dx/InitSession',false);
+        xhr.send(null);
+
+        if (xhr.status === 200) {
+        const data = JSON.parse(xhr.responseText);
+        var sessionID = data.SessionID;
+        } else {
+        console.log('Request failed.');
+        }
+
+        fetch("https://api.endlessmedical.com/v1/dx/AcceptTermsOfUse?SessionID="+sessionID+"&passphrase=I have read, understood and I accept and agree to comply with the Terms of Use of EndlessMedicalAPI and Endless Medical services. The Terms of Use are available on endlessmedical.com ", { method:"POST"
+        }).then(response => response.json()
+        )
+
+       let age = document.getElementsByName("age");
+       let weight = document.getElementsByName("weight");
+       let height = document.getElementsByName("height");
+     
+
+       const analyze = document.getElementById("analyze");
+
+        analyze.addEventListener("click", function (){
+    /*   fetch("https://api.endlessmedical.com/v1/dx/UpdateFeature?SessionID="+sessionID+"&name=Age&value="+age, { method:"POST"
+        }).then(response => response.json()
+        ).then(*/
+        let BMI =(parseInt(height.value)**2)
+        console.log(BMI)/*
+        fetch("https://api.endlessmedical.com/v1/dx/UpdateFeature?SessionID="+sessionID+"&name=BMI&value="+BMI, { method:"POST"
+        }).then(response => response.json()
+        ).then(data => console.log(data))*/
+        
+        })
+
+    </script>
+</body>
+</html>
