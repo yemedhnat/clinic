@@ -110,7 +110,9 @@
     <script> 
     
        const emailLink = document.getElementById("emailBody");
-       document.getElementById("sendButton").addEventListener("click", ()=>{emailLink.setAttrib("href") = "mailto:hailemedhntegegne@gmail.com";
+       document.getElementById("sendButton").addEventListener("click", (e)=>{
+        e.preventDefault();
+        emailLink.setAttrib("href") = "mailto:hailemedhntegegne@gmail.com";
        window.location.href = event.target.href;});
 
 
