@@ -76,11 +76,11 @@
                 <form action="#" method="post">
                     <div>
                         <label for="firstname" class="form-label me-3" >ስም*:</label>
-                        <input type="text" class="form-control mb-3 me-3" id ="firstname" name="firstname" placeholder="ስም">
+                        <input type="text" class="form-control mb-3 me-3" id ="firstname" name="firstname" requiredplaceholder="ስም">
                     </div>
                     <div>
                         <label for="firstname" class="form-label me-3">የአባት ስም*:</label>
-                        <input type="text" class="form-control mb-3 me-3" id ="lastname" name="lastname" placeholder="የአባት ስም">
+                        <input type="text" class="form-control mb-3 me-3" id ="lastname" name="lastname" required ="የአባት ስም">
                     </div>
                     <div>
                         <label for="firstname" class="form-label me-3">Email*:</label>
@@ -97,13 +97,21 @@
                         <label for="sexF" class="me-3 me-3" value="f">ሰት:
                         <input type="radio" class="text mb-3 me-3" required id="sexF" name="sex">
                         </label>
+                        <div>
+                            <label for="day" class="form-label me-3">የቀጠሮ ቀን:</label>
+                            <input type="date" class="text mb-3 me-3" required id="day" name="">
+                        </div>
+                        <div>
+                            <label for="time" class="form-label me-3">ሰአት:</label>
+                            <input type="time" class="text mb-3 me-3" required id="time" name="time">
+                        </div>
                     </div>
                     <div class="text-center">
                         <button type="button" class="btn btn-info mb-1" id="sendButton"  >
                             <a href="#" id="emailBody">Send</a>
                         </button>
                         <button type="button" class="btn btn-info mb-1" id="okButton"  >
-                            OK
+                            OK!
                         </button>
                     </div>
 
@@ -116,16 +124,19 @@
 
        let emailLink = document.getElementById("emailBody");
        document.getElementById("okButton").addEventListener("click", (e)=>{
+        
       let sm = document.getElementById("firstname").value;
       let abatSm = document.getElementById("lastname").value;
       let ldet = document.getElementById("dob").value;
       let email = document.getElementById("email").value;
       let tsota =  document.getElementsByName("sex")[0].checked ? "M":"F";
-      let userPara = "Name    " +sm+"\n"+"Last Name   " +abatSm+"\n"+"DOB   " +ldet+"\n"+"Emai    " +email+"\n"+"Sex    " +tsota;
+      let ken = document.getElementById("day").value;
+      let seat = document.getElementById("time").value;
+      let userPara = "Name----------" +sm+"\n"+"Last Name---------" +abatSm+"\n"+"DOB----------" +ldet+"\n"+"Email----------" +email+"\n"+"Sex-------" +tsota+"\n"+"Date----------" +ken+"\n"+"Time--------" +seat;
       userPara=encodeURIComponent(userPara)
      
       document.getElementById("sendButton").style.display="block";
-        emailLink.setAttribute("href","mailto:hailemedhntegegne@gmail.com?subject=appointemnt&body="+userPara);
+        emailLink.setAttribute("href","mailto:yemedhnatclinic@gmail.com?subject=appointemnt&body="+userPara);
       
     e.target.style.display="none";});
 
