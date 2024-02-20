@@ -29,3 +29,6 @@
     position: relative;
     left:-50px;
 }
+#sendButton{
+    display:none;
+}
