@@ -91,19 +91,19 @@
                         <input type="date" class="text mb-3 me-3" required id="dob" name="dob">
                     </div>
                         <label for="sex" class="me-3 ">ጾታ:</label>
-                        <label for="sexM" class="me-3 ">ወንድ:
+                        <label for="sexM" class="me-3" id="male">ወንድ:
                         <input type="radio" class="text mb-3 me-3" required id="sexM" name="sex" checked>
                         </label>
-                        <label for="sexF" class="me-3 me-3">ሰት:
+                        <label for="sexF" class="me-3 me-3" value="f">ሰት:
                         <input type="radio" class="text mb-3 me-3" required id="sexF" name="sex">
                         </label>
                     </div>
                     <div class="text-center">
-                        <button type="button" class="btn btn-info mb-3" id="sendButton"  >
-                            <a href="mailto:yemedhanit@gmail.com" id="emailBody">Send</a>
+                        <button type="button" class="btn btn-info mb-1" id="sendButton"  >
+                            <a href="#" id="emailBody">Send</a>
                         </button>
-                        <button type="button" class="btn btn-info mb-3" id="okButton"  >
-                            OK!
+                        <button type="button" class="btn btn-info mb-1" id="okButton"  >
+                            OK
                         </button>
                     </div>
 
@@ -117,11 +117,16 @@
        let emailLink = document.getElementById("emailBody");
        document.getElementById("okButton").addEventListener("click", (e)=>{
       let sm = document.getElementById("firstname").value;
-
-        alert(sm)
+      let abatSm = document.getElementById("lastname").value;
+      let ldet = document.getElementById("dob").value;
+      let email = document.getElementById("email").value;
+      let tsota =  document.getElementsByName("sex")[0].checked ? "M":"F";
+      let userPara = "Name    " +sm+"\n"+"Last Name   " +abatSm+"\n"+"DOB   " +ldet+"\n"+"Emai    " +email+"\n"+"Sex    " +tsota;
+      userPara=encodeURIComponent(userPara)
+     
       document.getElementById("sendButton").style.display="block";
-        emailLink.setAttribute("href") = "mailto:hailemedhntegegne@gmail.com?subject="+sm;
-        alert(emailLink.getAttribute("href"))
+        emailLink.setAttribute("href","mailto:hailemedhntegegne@gmail.com?subject=appointemnt&body="+userPara);
+      
     e.target.style.display="none";});
 
 
