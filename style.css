@@ -34,3 +34,11 @@
     left :170px;
     display:none;
 }
+.right{
+   /* text-align:right;*/
+}
+table{
+    width:100%;
+
+    border: 1px solid black;
+}
