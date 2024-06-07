@@ -68,121 +68,20 @@
           </div>
         </nav>
       </header>
-    <form action="#">
-        <table class="containerSymptoms">
-            <tr>
-                <h5>General Information</h5>
-                <input type="number" placeholder="Age" id="age"/>
-                <input type="text" placeholder="Height" id="height"/>
-                <input type="text" placeholder="Weight" id="weight"/>
-                <input type="text" placeholder="Gender" id="gender"/>
-            <td>
-            <div class="left">
-                <h5>MuscloSkeletal</h5>
-                <ul>
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="JointsPain" value="JointsPain"/> Joint Pain
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="MuscleGenPain" value="MuscleGenPain"/> Muscle Pain
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="NeckStiffness" value="NeckStiffness"/> Stiff Joints
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="HeadacheFrontal" Value="HeadacheFrontal"/> Headaches
-                    </li>   
-                </ul>
-            </div>
-            </td>
-            <td>
-            <div class="right">
-                <h5>Nose and Sinus</h5>
-                <ul>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="CranialCTNonContrastForChronicSinusitis" value="CranialCTNonContrastForChronicSinusitis"/> Sinus Pain
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="HistoryFever" value="HistoryFever"/> Fever
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="NoseCongestion"/> Runny Congestion
-                    </li>   
-                </ul>
+   
+    <div id="bgImage">
+    <div class="card text-white bg-info border-primary border col-6 " id = "partsContianer">
+        <div id="parts" class="card-text"></div>
+    
+   
+    <div id = "doneContainer">
+    <button id="done">Done</button>
+</div>
+</div>
+</div>
+    <script src="data.js"></script>
+<script src="diagnosis.js"></script>
 
-            </div>
-        </td>
-        </tr>
-        <td>
-            <div class="right">
-                <h5>CardioVascular System</h5>
-                <ul>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="ch"/> Cold Hands/Feet
-                    </li>
-                   
-                </ul>
-            </div>
-        </td>
-        <td>
-            <div class="right">
-                <h5>CardioVascular System</h5>
-                <ul>
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="ColdUpperLimbTips" value="ColdUpperLimbTips"/> Cold Hands
-                    </li>
-
-                </ul>
-            </div>
-        </td>
-            <tr>
-            <td>
-            <div class="left">
-                <h5>Neurological</h5>
-                <ul>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="fa"/> Fainting
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="DizzinessWithPosition" value="DizzinessWithPosition"/> Dizziness
-                    </li>
-                   
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="Seizure" value="Seizure" />Seizures
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="ml" value="DecreasedShortTermMemory"/> Memory Loss
-                    </li>
-                </ul>
-            </div>
-        </td>
-        <td>
-            <div class="right">
-                <h5>Neurological</h5>
-                <ul>
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="Vomiting" valut="Vomiting"/> Vomiting
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx"  id="Nausea" value="Nausea"/> Nausea
-                    </li>   
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="SpinePain" value="SpinePain" />SpinePain
-                    </li>
-                    <li>
-                        <input type = "checkbox" class ="ckbx" id="SwallowPain" value="SwallowPain"/> Trouble Swallowing                   </li>
-                    <li>
-                </ul>
-            </div>
-        </td>
-            </tr>
-        </table>
-        <br>
-        <button id="send">መርምር</button>
-        <button id="get">ውጠት</button>
-    </form>
-    <div id = "diseases"></div>
-<script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

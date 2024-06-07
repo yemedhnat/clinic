@@ -45,3 +45,41 @@ table{
 #get{
     display: none;
 }
+#parts{
+    
+    display: flex;
+    justify-content: center;
+    height: 700px;
+}
+.list{
+    cursor: pointer;
+    width: 200px;
+    background-color: cadetblue;
+    list-style: none;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    color:rgb(61, 70, 64);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#done{
+    border:  lightblue solid 1px;
+    width: 200px;
+}
+#doneContainer{
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+}
+#bgImage{
+    background-image: url(/clinic/image/staff.jpg);
+    
+}
+.diagnosis{
+    background-color:chocolate;
+    color: white;
+    
+}
+.diseases_container{
+    height: 700px;
+}
