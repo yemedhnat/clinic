@@ -20,6 +20,13 @@
         background-color:white ;
     }
 }
+.whatsapp{
+    position:fixed;
+    right: 0px;
+    bottom: 0px;
+    width:100px;
+    height: auto;
+}
 .hover-effect:hover {
   opacity: 0.5;
   border-bottom: 1px solid blue;
@@ -104,4 +111,100 @@ table{
     background-color: brown;
     text-decoration: none;
     width: 200px;
+}
+/* Chat sheets */
+.chat_container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0px;
+    top:0px;
+    margin: 20px;
+    height:90%;
+    width:90%;
+}
+.chat_heading{
+    position: fixed;
+    width:auto;
+    top:inherit;
+    left:0px;
+    right: 0px;
+    text-align: center;
+    color: rgb(37, 83, 99);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: beige;
+    padding:20px;
+    margin-top: 0px;
+    border-radius: 5px;
+}
+.m_chats{
+    align-self:flex-start;
+    border: black solid 1px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width:fit-content;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightblue;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.user_chats{
+    align-self: flex-end;
+    border: black solid 1px;    
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width:fit-content;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightblue;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.user_input{
+    position: fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+   
+    width:auto;
+    height:5%;
+    border:none;
+    background-color: beige;
+    border-radius: 5px;
+    font-size: 1.5em;
+    padding-left: 20px;
+}
+.choices{
+    cursor: pointer;
+    text-align: center;
+    align-self: center;
+    border: black solid 1px;  
+    width:fit-content;
+    min-width: 160px;
+    padding: 10px;
+    margin: 5px;
+    background-color: rgb(140, 168, 162);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.spacer{
+    height:20px;
+}
+.spacer_bottom{
+    height:100px;
+}
+.disclaimer{
+    margin-top: 40px;
+    font-size: medium;
+    text-align: center;
+}
+.schedule_button{
+    height: 2em;
+    text-align: center;
+    border: black solid 1px;
+    background-color: brown;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
