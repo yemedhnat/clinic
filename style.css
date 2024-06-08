@@ -49,6 +49,7 @@ table{
     
     display: flex;
     justify-content: center;
+    padding: 50px;
     height: 700px;
 }
 .list{
@@ -65,6 +66,8 @@ table{
 #done{
     border:  lightblue solid 1px;
     width: 200px;
+    height: 75px;
+    margin: 40px;
 }
 #doneContainer{
     display: flex;
@@ -77,8 +80,15 @@ table{
 }
 .diagnosis{
     background-color:chocolate;
+    height:100px;
+    border: red solid 2px;
+    border-radius: 10px;
+    align-items: center;
+    font-size: large;
     color: white;
+    padding- :40%;
     
+
 }
 .diseases_container{
     height: 700px;

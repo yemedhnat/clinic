@@ -27,6 +27,7 @@ function populatePains(e){
         
         switch(part){
             case "Abdomen":
+                pain_array = []
                 concatArray(abdomen,pain_array);
                 break;
             
@@ -109,24 +110,29 @@ done_button.addEventListener("click",()=>{
     for(let i=0; i<disease_obj_array.length;i++){
         for(let j=i+1; j< disease_obj_array.length; j++){
             if (disease_obj_array[i].disease == disease_obj_array[j].disease){
-                console.log(i)
                 disease_obj_array[i].count++;
             }
             
         }
         
     }
-    console.log(disease_obj_array)
-    disease_obj_array.sort((a,b) => {return b.count - a.count})
-    console.log(disease_obj_array)
+    disease_obj_array.sort((a,b) => {return b.count - a.count});
     for(let i = 0; i < disease_obj_array.length; i++){
         disease[i]=disease_obj_array[i].disease;
+    }
+    for(let i = 0; i< disease_obj_array.length;i++){
+        if(disease_obj_array[i].count > 0){
+            for(let j = i+1; j < disease_obj_array.length; j++){
+                if(disease_obj_array[i].disease == disease[j]){
+                    disease.splice(j,1);
+                }
+            }
+        }
     }
     attachNode(disease)
     for(let i = 0; i< disease_obj_array.length; i++){
         if(disease_obj_array[i].count > 0){
             html.children[i].className += " diagnosis";
-
         }
     }
 
@@ -149,6 +155,8 @@ function attachNode(array){
         html.appendChild(element);  
     }
     painParts.appendChild(html)
+    array = []
+    console.log(array)
 }
 painParts.appendChild(html);
 
