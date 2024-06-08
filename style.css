@@ -113,6 +113,10 @@ table{
     width: 200px;
 }
 /* Chat sheets */
+.chat_body{
+    width: 10vw;
+
+}
 .chat_container{
     display: flex;
     flex-direction: column;
@@ -121,7 +125,7 @@ table{
     top:0px;
     margin: 20px;
     height:90%;
-    width:90%;
+    width:90vw;
 }
 .chat_heading{
     position: fixed;
@@ -189,7 +193,7 @@ table{
 
 }
 .spacer{
-    height:20px;
+    height:30px;
 }
 .spacer_bottom{
     height:100px;
