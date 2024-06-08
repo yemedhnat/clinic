@@ -50,7 +50,11 @@ table{
     display: flex;
     justify-content: center;
     padding: 50px;
-    height: 700px;
+    min-height: 700px;
+}
+.list_container{
+    display: flex;
+    justify-content: center;
 }
 .list{
     cursor: pointer;;
@@ -58,11 +62,12 @@ table{
     background-color: cadetblue;
     list-style: none;
     padding: 5px;
-    margin: 2px;
+    margin-bottom: 10px;
     text-align: center;
     color:white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     box-shadow: 5px 5px 10px 5px white;
+    border-radius: 10px;
 }
 #done{
     border:  lightblue solid 1px;
@@ -81,16 +86,22 @@ table{
 }
 .diagnosis{
     background-color:chocolate;
-    height:100px;
-    border: red solid 2px;
+    height:40px;
     border-radius: 10px;
-    align-items: center;
     font-size: large;
     color: white;
-    padding- :40%;
+    width: 200px;
+    margin-bottom: 10px;
     
 
 }
 .diseases_container{
     height: 700px;
+}
+.rate{
+    margin-top: 200px;
+    height: 50px;
+    background-color: brown;
+    text-decoration: none;
+    width: 200px;
 }
