@@ -1,9 +1,13 @@
 let container_div = document.getElementById("container_div");
+const bottom_spacer = document.getElementsByClassName("spacer_bottom")[0];
+const message_delay = 1000
+
 function place_m_message(message){
     let div = document.createElement("div");
     div.className = "m_chats";
-    div.innerHTML = message;
+    div.innerHTML = '<img src="image/drM.jpg" id="drM"/> '+  message; 
     container_div.appendChild(div);
+    container_div.lastChild.scrollIntoView();
 }
 
 
@@ -12,15 +16,21 @@ function place_user_message(message){
     div.className = "user_chats";
     div.innerHTML = message;
     container_div.appendChild(div);
+    container_div.lastChild.previousSibling.scrollIntoView();
 }
 
-function place_choices(choice){
+function place_choices(choice,event_flag){
+    max_width = 10
     for(let i=0; i < choice.length; i++){
         let div = document.createElement("div");
         div.className = "choices";
         div.innerHTML = choice[i];
-        div.addEventListener("click",show_pains)
-        container_div.appendChild(div);
+        max_width = max_width > parseInt(window.getComputedStyle(div).width) ? max_width : parseInt(window.getComputedStyle(div).width)
+        if(event_flag){
+            div.addEventListener("click",show_pains);
+        }
+        container_div.appendChild(div); 
+        //height adjustment
     }
 } 
 
@@ -35,33 +45,35 @@ function show_pains(e){
     }
     place_user_message(e.target.innerHTML)
     choice = e.target.innerHTML
-    console.log(body_parts.indexOf(choice))
     index = body_parts.indexOf(choice) > -1 ? body_parts.indexOf(choice) : -1;
     flag = body_parts.indexOf(choice) > -1 ? "body" : "symptom"
     if(flag == "body"){
         if(choice == "No other symptoms"){
             place_m_message("This is my diagnosis." );
-            place_choices(current_diagnosis);
+            setTimeout(()=>{
+                place_choices(current_diagnosis,false);
             let div = document.createElement("div");
             let p_1 = document.createElement("p");
             p_1.className = "disclaimer";
-            p_1.innerHTML = "his is just an AI diagnosis. To be sure we have to do some test"
-            let p_2 = document.createElement("p");
+            p_1.innerHTML = "This is just an AI diagnosis. To be sure we have to do some tests."
+            let p_2 = document.createElement("a");
             p_2.className = "schedule_button";
             p_2.innerHTML = "Schedule an appointment";
+            p_2.href="mailTo: yemedhnatclinic@gmail.com"
             div.appendChild(p_1);
             div.appendChild(p_2);
-            container_div.appendChild(div);
+            container_div.appendChild(div)
+            container_div.lastChild.scrollIntoView();},message_delay*3)
         }else{
             setTimeout(()=>{
                 place_m_message ("I am sorry to hear you are having some pain on your "+ choice)
-            },1000);
+            },message_delay);
             setTimeout(()=>{
                 place_m_message ("Do you have any of the following symptoms?")
-            },4000);
+            },message_delay*3);
             setTimeout(()=>{
-                place_choices(all_symptoms[index])
-            },8000);
+                place_choices(all_symptoms[index],true)
+            },message_delay*5);
         }
     }else if(flag == "symptom"){
         label1:
@@ -77,25 +89,24 @@ function show_pains(e){
         setTimeout(()=>{
             place_m_message ("I am sorry to hear you are having "+ choice)
 
-        },1000);
+        },message_delay);
         setTimeout(()=>{
             place_m_message ("Do you have any of the any other symptoms?")
-        },3000);
+        },message_delay*3);
         setTimeout(()=>{
-            body_parts.push("No other symptoms");
-            place_choices(body_parts);
-        },5000);
+            body_parts.unshift("No other symptoms");
+            place_choices(body_parts,true);
+        },message_delay*5);
     }
     
 }
 
 place_m_message("Welcome. Where does it hurt")
-
-place_choices(body_parts)
+setTimeout(()=>{
+    place_choices(body_parts,true)},message_delay * 2)
 // user input function
 const user_input = document.getElementById("user_input");
 user_input.addEventListener("keypress",(e)=>{
-    console.log(e.key)
     if(e.key =="Enter"){
         place_user_message(e.target.value)
     }
