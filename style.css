@@ -155,14 +155,14 @@ table{
 }
 .user_chats{
     align-self: flex-end;
-    border: black solid 1px;    
+    border: white solid 1px;    
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     width:fit-content;
     padding: 10px;
     margin: 20px;
-    background-color: lightblue;
+    background-color: rgb(186, 230, 173);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .user_input{
