@@ -113,6 +113,10 @@ table{
     width: 200px;
 }
 /* Chat sheets */
+.my_flex_end{
+    display: flex;
+    justify-content: flex-end;
+}
 .chat_body{
     width: 10vw;
 
@@ -223,8 +227,8 @@ table{
 }
 /* user page sheets*/
 .photo{
-    height: 120px;
-    width: auto;
+    height: auto;
+    width: 50%;
     margin-right: 20px;
     border: black solid 1px;
     border-radius: 20px;
@@ -237,4 +241,14 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.title_container{
+    display: flex;
+    justify-content: center;
+    background:beige
+}
+.width_wide{
+    font-size: 4em;
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(63, 125, 146)
 }
