@@ -2,6 +2,10 @@ let container_div = document.getElementById("container_div");
 const bottom_spacer = document.getElementsByClassName("spacer_bottom")[0];
 const message_delay = 0
 
+
+
+
+
 function place_m_message(message){
     let div = document.createElement("div");
     div.className = "m_chats";
@@ -56,7 +60,7 @@ function treat_diagnosis(diagnosis){
     diagnosis_obj.sort((a,b)=>{return b - a});
     let k = 0;
     
-    while(k < diagnosis_obj.length){)
+    while(k < diagnosis_obj.length){
         if(diagnosis_obj[k].count == -1){
             diagnosis_obj.splice(k,1);
         }
