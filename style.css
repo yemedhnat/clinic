@@ -262,3 +262,49 @@ table{
     cursor: pointer;
     width:50px;
 }
+
+/** index*/
+.address{
+    position:fixed;
+    top:250px;
+    left:50px;
+    height:10vw;
+    width:10vw;
+    min-width: 80px;;
+    min-height: 80px;
+    z-index: 2;
+    background-color: black;
+    color:white;
+    padding-top: 4vw;
+    padding-left: 3vw;
+    opacity: .8;
+    font-weight: bold;
+}
+.doctors{
+    position:fixed;
+    top:250px;
+    right:50px;
+    height:10vw;
+    width:10vw;
+    min-width: 80px;;
+    min-height: 80px;
+    z-index: 2;
+    background-color: black;
+    color:white;
+    padding-top: 4vw;
+    padding-left: 3vw;
+    opacity: .8;
+    font-weight: bold;
+}
+.doctors:hover{
+    opacity:1;
+    transform:scale(1.2);
+}
+.address:hover{
+    opacity:1;
+    transform:scale(1.2);
+}
+.copyright{
+    position:relative;
+    top:calc(90px + 5vw);
+}
