@@ -2,15 +2,16 @@ document.getElementById("form").addEventListener("click", make_form)
 
 function make_form(e){
     let form = document.createElement("form");
-    form.innerHTML = `<input type="text" placeholder="Name"/>
-                        <input type="text" placeholder="Father's Name"/>
-                        <input type="date" placeholder="Date"/> <br>
+    form.innerHTML = `<input type="text" placeholder="Name"/> <br>
+                        <input type="text" placeholder="Father's Name"/> <br>
+                        <input type="date"  placeholder="Date"/> <br>
                         <input type="radio" name="sex" checked> Male</input>
                         <input type="radio" name="sex"> Female</input><br>
                         <button type="submit">Submit</button>`;
     e.target.innerHTML = ""
     e.target.style.width = "fit-content";
     e.target.style.height = "fit-content";
-    form.className = "form-row"
+    form.className = "schedule_form"
+    form.style.width = "fit-content"
     e.target.appendChild(form)
 }

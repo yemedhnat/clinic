@@ -274,6 +274,9 @@ table{
     justify-content: center;
     background-color: red solid 3px;
 }
+.schedule_form input{
+    max-width:100%;
+}
 .appointment_schedule,.doctors{
     height:10vw;
     width:20vw;
