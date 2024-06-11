@@ -291,7 +291,7 @@ table{
 .appointment_schedule,.doctors{
     height:10vw;
     width:20vw;
-    min-width: 80px;;
+    min-width: 100px;;
     min-height: 80px;
     z-index: 2;
     background-color: black;
