@@ -312,3 +312,24 @@ table{
     border-right: white solid 1px;
     border-left: white solid 1px;
 }
+.full_height{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:80vh;
+}
+
+.full_height_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:40vh;
+    width:40vh;
+    border:lightblue solid 1px ;
+    background-color: lightblue;
+}
+.width_60{
+    width:20em;
+}
