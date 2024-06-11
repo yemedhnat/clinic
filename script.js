@@ -1,4 +1,9 @@
-
+const hamburger = document.getElementById("humburger");
+hamburger.addEventListener("click",()=>{
+  console.log("d  ")
+  document.getElementsByClassName("doctors")[0].style.display = "none";
+  document.getElementsByClassName("address")[0].style.display = "none";
+})
 let url = 'https://api.endlessmedical.com/v1/dx/InitSession'
 
  async function fetchData(url) {

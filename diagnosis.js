@@ -1,4 +1,9 @@
-
+const hamburger = document.getElementById("humburger");
+hamburger.addEventListener("click",()=>{
+  console.log("d  ")
+  document.getElementsByClassName("doctors")[0].style.display = "none";
+  document.getElementsByClassName("address")[0].style.display = "none";
+})
 
 let html = document.createElement("ul")
 let url = "https://www.google.com/maps/place/Yemedhnat+Internal+Medicine+Specialty+Clinic./@8.9920566,38.6651951,12z/data=!4m12!1m2!2m1!1syemedhnat+clinic+addis+abaa!3m8!1s0x164b8382be4e9df1:0x962dc0a99a08e9e3!8m2!3d8.9522315!4d38.7853909!9m1!1b1!15sCht5ZW1lZGhuYXQgY2xpbmljIGFkZGlzIGFiYWGSAQ5tZWRpY2FsX2NlbnRlcuABAA!16s%2Fg%2F11v9lhzwgs?entry=ttu"
