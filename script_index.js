@@ -1,17 +1,20 @@
-document.getElementById("form").addEventListener("click", make_form)
+const appointment = document.getElementById("form");
+appointment.addEventListener("click", make_form)
 
 function make_form(e){
     let form = document.createElement("form");
-    form.innerHTML = `<input type="text" placeholder="Name"/> <br>
-                        <input type="text" placeholder="Father's Name"/> <br>
-                        <input type="date"  placeholder="Date"/> <br>
-                        <input type="radio" name="sex" checked> Male</input>
-                        <input type="radio" name="sex"> Female</input><br>
+    form.innerHTML = `<input class = "popup_form" type="text" placeholder="Name"  /> <br>
+                        <input  type="text" placeholder="Father's Name"/> <br>
+                        <input  type="date"  placeholder="Date"/> <br>
+                        <input  type="radio" name="sex" checked> Male</input>
+                        <input   type="radio" name="sex"> Female</input><br>
                         <button type="submit">Submit</button>`;
-    e.target.innerHTML = ""
-    e.target.style.width = "fit-content";
-    e.target.style.height = "fit-content";
-    form.className = "schedule_form"
-    form.style.width = "fit-content"
-    e.target.appendChild(form)
+    appointment.innerHTML = ""
+    appointment.style.width = "200%";
+    form.className = "schedule_form";
+    
+    appointment.appendChild(form);
+    appointment.style.height = "fit-content";
+    form.style.transform = 'translateY(-48px)';
+    appointment.removeEventListener("click", make_form)
 }

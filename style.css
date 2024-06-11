@@ -1,6 +1,4 @@
-body{
-    min-height: 100vh;
-}
+
 #yemedhnatLogo{
     width:5%;
     height : auto;
@@ -275,7 +273,20 @@ table{
     background-color: red solid 3px;
 }
 .schedule_form input{
-    max-width:100%;
+    position: relative;
+    top:0px;
+    margin-top: 0px;;
+    width:100%;
+    margin-left: 0px;
+}
+.popup_form{
+    margin-top: 0px;
+    width:100%;
+}
+.d_inline{
+    display: inline;
+    font-size: .5em;
+    color: red;
 }
 .appointment_schedule,.doctors{
     height:10vw;
@@ -284,8 +295,7 @@ table{
     min-height: 80px;
     z-index: 2;
     background-color: black;
-    color:white;
-;
+    color:white;    
     opacity: .8;
     font-weight: bold;
 }
