@@ -1,6 +1,6 @@
 let container_div = document.getElementById("container_div");
 const bottom_spacer = document.getElementsByClassName("spacer_bottom")[0];
-const message_delay = 0
+const message_delay = 1000
 
 
 
