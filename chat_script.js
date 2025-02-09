@@ -98,7 +98,7 @@ function show_pains(e){
             let p_2 = document.createElement("a");
             p_2.className = "schedule_button";
             p_2.innerHTML = "Schedule an appointment";
-            p_2.href="mailTo: yemedhnatclinic@gmail.com"
+            p_2.href="https://www.medhinfamilycenter.com/booking-calendar/medical-consultation-with-dr-medhanit?referral=service_list_widget"
             div.appendChild(p_1);
             div.appendChild(p_2);
             container_div.appendChild(div)
