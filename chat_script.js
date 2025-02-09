@@ -142,7 +142,7 @@ function show_pains(e){
     
 }
 
-place_m_message("Welcome. Where does it hurt")
+place_m_message("ጤና ይስጥልኝ፣ ምንዎትን አመምዎት")
 setTimeout(()=>{
     place_choices(body_parts,true)},message_delay * 2)
 // user input function
