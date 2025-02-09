@@ -16,7 +16,7 @@ let body_parts = [ 'ልቤን',
   ' አፌን',
   ' የወር አበባ ችግር',
   'የቆዳ ችግር',
-  'የሽንት ቧንቧ ችግር',]
+  'የሽንት ቧንቧ ችግር']
 let all_symptoms = [['Abdominal swelling', 'Acute abdominal pain in adults', 'Acute abdominal pain in pregnancy', 'Chronic/recurrent abdominal pain in adults', 'Constipation', 'Diarrhoea', 'Epigastric pain', 'Recurrent childhood abdominal pain', 'Vomiting', 'Vomiting blood'],
  ['Anal itching', 'Anal swelling', 'Anorectal pain', 'Rectal bleeding', 'Rectal discharge'], 
  ['Breast enlargement in men', 'Breast lumps in women', 'Breast pain', 'Nipple discharge'],
