@@ -1,12 +1,13 @@
 let container_div = document.getElementById("container_div");
 const bottom_spacer = document.getElementsByClassName("spacer_bottom")[0];
-const message_delay = 1000
+const message_delay = 0
 
 
 
 
 
 function place_m_message(message){
+    
     let div = document.createElement("div");
     div.className = "m_chats";
     div.innerHTML = '<img src="image/drM.jpg" id="drM"/> '+  message; 
@@ -86,51 +87,68 @@ function show_pains(e){
     index = body_parts.indexOf("No other symptoms") > -1 ? --index : index;
     flag =  body_parts.indexOf(choice) > -1 ? "body" : "symptom"
     if(flag == "body"){
-        if(choice == "No other symptoms"){
-            place_m_message("This is my diagnosis." );
+        if(choice == "No other symptoms" && current_diagnosis.length > 0){
+            place_m_message("ውጤቱ የሚከተለው ነው።" );
             current_diagnosis = treat_diagnosis(current_diagnosis)
             setTimeout(()=>{
                 place_choices(current_diagnosis,false);
             let div = document.createElement("div");
             let p_1 = document.createElement("p");
             p_1.className = "disclaimer";
-            p_1.innerHTML = "This is just an AI diagnosis. To be sure we have to do some tests."
+            p_1.innerHTML = "አመሰግናለሁ ይህ የAI ምርመራ ውጤት ነው። አርግጠኛ ለመሆን ክሊንካችን ጋ መጠው ይመርመሩ።"
             let p_2 = document.createElement("a");
             p_2.className = "schedule_button";
-            p_2.innerHTML = "Schedule an appointment";
+            p_2.innerHTML = "ቀጠሮ ያስይዙ";
             p_2.href="https://www.medhinfamilycenter.com/booking-calendar/medical-consultation-with-dr-medhanit?referral=service_list_widget"
             div.appendChild(p_1);
             div.appendChild(p_2);
             container_div.appendChild(div)
             container_div.lastChild.scrollIntoView();},message_delay*3)
+        }else if(current_diagnosis.length == 0 && choice == "No other symptoms"){
+            place_m_message("I don't have enough information to make a diagnosis.");
         }else{
             setTimeout(()=>{
-                place_m_message ("I am sorry to hear you are having some pain on your "+ choice)
+                if(choice != "No other symptoms"){
+                    place_m_message ("አዝናለሁ!")
+                }
             },message_delay);
             setTimeout(()=>{
-                place_m_message ("Do you have any of the following symptoms?")
+                if(choice != "No other symptoms"){
+                    place_m_message ("ከሚከተሉት ምልክቶች የትኞቹ ታይትዎብዎታል?");
+                }
             },message_delay*3);
             setTimeout(()=>{
-                place_choices(all_symptoms[index],true)
+                if(choice != "No other symptoms"){
+                    all_symptoms[index].push("አልተጠቀሰም");
+                    place_choices(all_symptoms[index],true)
+                    all_symptoms[index].pop();
+                }
             },message_delay*5);
         }
     }else if(flag == "symptom"){
-        label1:
-        for(let i = 0; i < all_symptoms.length; i++){
-            for(let j = 0; j < all_symptoms[i].length; j++){
-                if(all_symptoms[i][j] == choice){
-                    let index_internal = i;
-                    current_diagnosis = current_diagnosis.concat(all_diagnosis[i])
-                    break label1;
+        var count = -1;
+        if(choice != "አልተጠቀሰም"){
+            label1:
+            for(let i = 0; i < all_symptoms.length; i++){
+                for(let j = 0; j < all_symptoms[i].length; j++){
+                    count++;
+                    if(all_symptoms[i][j] == choice){
+                        let index_internal = i;
+                        current_diagnosis = current_diagnosis.concat(all_diagnosis[count]);
+                        break label1;
+                    }
                 }
             }
         }
         setTimeout(()=>{
-            place_m_message ("I am sorry to hear you are having "+ choice)
+            if((choice !="No other symptoms")){
+                console.log(choice);
+                place_m_message ("አዝናለሁ!")
+            }   
 
         },message_delay);
         setTimeout(()=>{
-            place_m_message ("Do you have any of the any other symptoms?")
+            place_m_message ("ከሚከተሉት ምልክቶች የትኞቹ ታይትዎብዎታል?")
         },message_delay*3);
         setTimeout(()=>{
             if(body_parts.indexOf("No other symptoms") < 0){
@@ -144,7 +162,7 @@ function show_pains(e){
 
 place_m_message("ጤና ይስጥልኝ፣ ምንዎትን አመምዎት")
 setTimeout(()=>{
-    place_choices(body_parts,true)},message_delay * 2)
+    place_choices(body_parts,true)},message_delay * 2) // The first message that shows the body parts
 // user input function
 const user_input = document.getElementById("user_input");
 user_input.addEventListener("keypress",(e)=>{

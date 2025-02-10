@@ -208,14 +208,19 @@ table{
 }
 .disclaimer{
     margin-top: 40px;
-    font-size: medium;
+    font-size: 2em;
     text-align: center;
 }
+.schedule_button:hover{
+    transform: scale(80%);
+}
 .schedule_button{
-    height: 2em;
+    padding-top: 1em;
+    height: 5em;
     display:block;
     text-decoration: none;
     text-align: center;
+    font-size: 2em;
     border: black solid 1px;
     background-color: brown;
     border-radius: 5px;
